@@ -14,6 +14,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{69451E66-29F6-49EE-8795-6717E93E93D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "src\WebAPI\WebAPI.csproj", "{DACC37B7-9B5E-451C-B1FE-1EB2A917B859}"
+	ProjectSection(ProjectDependencies) = postProject
+		{138D2320-5531-4BC7-BA83-D8D8CBF0C6E8} = {138D2320-5531-4BC7-BA83-D8D8CBF0C6E8}
+		{B4236771-64E8-49C0-9913-1EF0F2C73244} = {B4236771-64E8-49C0-9913-1EF0F2C73244}
+		{72B351B5-F811-40BF-9F70-70156249D40F} = {72B351B5-F811-40BF-9F70-70156249D40F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
