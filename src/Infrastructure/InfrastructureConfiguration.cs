@@ -23,6 +23,7 @@ namespace Kod.Infrastructure
         {
             //Repositories
             services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

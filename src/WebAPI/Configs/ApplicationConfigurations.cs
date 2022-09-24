@@ -12,8 +12,8 @@ public static class ApplicationConfigurations
         builder.UseRouting();
         builder.UseCors("CorsPolicity");
         builder.UseHealthChecks("/healthapp");
-        builder.UseSwagger();
-        builder.UseSwaggerUI();
+        //builder.UseSwagger();
+        //builder.UseSwaggerUI();
         builder.UseRewriter(new RewriteOptions().AddRedirect("^$", "swagger"));
     }
 }

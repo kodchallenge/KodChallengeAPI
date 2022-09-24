@@ -17,5 +17,6 @@ namespace Kod.Infrastructure.Database.EntityFramework.Contexts
         }
 
         public virtual DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
+        public virtual DbSet<User> Users{ get; set; }
     }
 }

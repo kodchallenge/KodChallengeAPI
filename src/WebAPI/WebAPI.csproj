@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Requests\" />
+    <Folder Include="Requests\UserRequests\" />
     <Folder Include="Responses\Defaults\" />
   </ItemGroup>
 	

@@ -6,6 +6,7 @@ using Kod.Domain.Models;
 using Microsoft.Extensions.Logging;
 using System.Linq.Expressions;
 using System.Linq;
+using Kod.Application.Constants.Messages;
 
 namespace Kod.Application.Managers
 {
@@ -28,7 +29,7 @@ namespace Kod.Application.Managers
             var isExistsName = await _programmingLanguageRepository.GetAsync(x => x.Name.Equals(lang.Name));
             if(isExistsName != null)
             {
-                throw new InternalException("dublicatedIdentity");
+                throw new InternalException(Messages.DublicatedName);
             }
 
             var addedProgrammingLanguage = await _programmingLanguageRepository.AddAsync(lang);

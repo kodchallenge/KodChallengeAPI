@@ -21,6 +21,7 @@ namespace Kod.Application
         public static void AddApplicationDependencyInjection(this IServiceCollection services)
         {
             services.AddTransient<IProgrammingLanguageService, ProgrammingLanguageManager>();
+            services.AddTransient<IUserService, UserManager>();
         }
     }
 }

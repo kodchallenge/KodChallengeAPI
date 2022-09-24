@@ -11,11 +11,11 @@ public static class ServiceConfigurations
         services.AddInfrastructure(configuration);
         services.AddApplication();
         services.AddControllers();
+        //services.AddSwagger();
         services.AddMemoryCache();
         services.AddHealthChecks();
         services.AddCors();
         services.AddCore();
-        services.AddSwagger();
     }
 
     private static void AddCors(this IServiceCollection services)
@@ -34,7 +34,7 @@ public static class ServiceConfigurations
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Kod Web API Document", Version = "v1" });
+            c.SwaggerDoc("v2", new OpenApiInfo { Title = "Kod Web API Document", Version = "v1" });
         });
     }
 }

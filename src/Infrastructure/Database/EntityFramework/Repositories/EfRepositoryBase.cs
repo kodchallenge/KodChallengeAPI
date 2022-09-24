@@ -2,11 +2,10 @@
 using Kod.Core.Domain.Models;
 using Kod.Core.Abstractions.Database;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Linq.Expressions;
 using Kod.Core.Extensions;
 
-namespace Kod.Core.Infrastructure.Database.EntityFramework
+namespace Kod.Infrastructure.Database.EntityFramework
 {
     public class EfRepositoryBase<TEntity, TContext> : IRepository<TEntity> where TEntity : Entity where TContext : DbContext
     {
