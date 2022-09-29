@@ -1,4 +1,4 @@
-﻿using Kod.Core.Domain.Models;
+using Kod.Core.Domain.Models;
 using Kod.Domain.Models;
 using System.Linq.Expressions;
 
