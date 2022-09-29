@@ -1,11 +1,9 @@
 ﻿using Kod.Application.Abstractions.Repositories;
 using Kod.Application.Abstractions.Services;
-using Kod.Core.Domain.Models;
 using Kod.Core.Exceptions;
 using Kod.Domain.Models;
 using Microsoft.Extensions.Logging;
 using System.Linq.Expressions;
-using System.Linq;
 using Kod.Application.Constants.Messages;
 
 namespace Kod.Application.Managers
