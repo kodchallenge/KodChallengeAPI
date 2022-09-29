@@ -22,6 +22,7 @@ namespace Kod.Application
         {
             services.AddTransient<IProgrammingLanguageService, ProgrammingLanguageManager>();
             services.AddTransient<IUserService, UserManager>();
+            services.AddTransient<ICategoriService, CategoriManager>();
         }
     }
 }
