@@ -1,5 +1,4 @@
-﻿
-using Kod.Application.Modules.UserModules.Queries;
+﻿using Kod.Application.Modules.UserModules.Queries;
 using Kod.WebAPI.Requests.Defaults;
 using Kod.WebAPI.Responses.UserResponses.Queries;
 using Microsoft.AspNetCore.Mvc;

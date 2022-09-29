@@ -9,7 +9,7 @@ namespace Kod.Infrastructure.Database.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<Problem> builder)
         {
-            builder.HasKey(x => x.Id);
+            
         }
     }
 }
