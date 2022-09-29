@@ -1,6 +1,5 @@
 ﻿using Kod.Core.Tools.Responses;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kod.WebAPI.Controllers
