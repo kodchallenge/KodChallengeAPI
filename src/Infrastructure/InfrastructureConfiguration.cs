@@ -16,7 +16,7 @@ namespace Kod.Infrastructure
         
         private static void AddDatabases(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<KodContext>(options => options.UseSqlServer(configuration.GetConnectionString("Kod_DevDB")));
+            services.AddDbContext<KodContext>(options => options.UseNpgsql(configuration.GetConnectionString("Kod_DevDB")));
         }
 
         private static void AddInfrastructureDependencies(this IServiceCollection services)
@@ -25,7 +25,7 @@ namespace Kod.Infrastructure
             services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICategoriRepository, CategoriRepository>();
-            
+            services.AddScoped<IProblemRepository, ProblemRepository>();   
         }
     }
 }

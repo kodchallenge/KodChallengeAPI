@@ -1,5 +1,6 @@
 ﻿
 using Kod.Core.Domain.Abstractions;
+using Kod.Core.Domain.Models;
 
 namespace Kod.Domain.Models
 {
