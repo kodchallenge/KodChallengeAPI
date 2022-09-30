@@ -8,7 +8,7 @@ namespace Kod.Application.Modules.ProgrammingLang.Profiles
     {
         public ProgrammingLanguageProfiles()
         {
-            CreateMap<ProgrammingLanguage, GetAllProgrammingLanguagesQuery>().ReverseMap();
+            CreateMap<ProgrammingLanguages, GetAllProgrammingLanguagesQuery>().ReverseMap();
         }
     }
 }

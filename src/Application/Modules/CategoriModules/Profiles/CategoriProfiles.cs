@@ -9,7 +9,7 @@ namespace Kod.Application.Modules.CategoriesModules.Profiles
     {
         public CategoriProfiles()
         {
-            CreateMap<Categori, GetAllCategoriQuery>().ReverseMap();
+            CreateMap<Categories, GetAllCategoriQuery>().ReverseMap();
         }
     }
 }

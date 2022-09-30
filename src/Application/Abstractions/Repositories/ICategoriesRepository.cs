@@ -3,7 +3,7 @@ using Kod.Domain.Models;
 
 namespace Kod.Application.Abstractions.Repositories
 {
-    public interface IProblemRepository : IRepository<Problem>
+    public interface ICategoriesRepository : IRepository<Categories>
     {
     }
 }

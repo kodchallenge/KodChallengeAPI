@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Configurations
 {
-    internal class UserConfigurations : IEntityTypeConfiguration<User>
+    internal class UsersConfigurations : IEntityTypeConfiguration<Users>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Users> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.FullName).IsRequired().HasMaxLength(50);

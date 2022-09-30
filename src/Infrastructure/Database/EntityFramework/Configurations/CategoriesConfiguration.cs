@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Configurations
 {
-    public class CategoriConfiguration : IEntityTypeConfiguration<Categori>
+    public class CategoriesConfiguration : IEntityTypeConfiguration<Categories>
     {
-        public void Configure(EntityTypeBuilder<Categori> builder)
+        public void Configure(EntityTypeBuilder<Categories> builder)
         {
             // TODO: Ad Configuration
             builder.HasKey(x => x.Id);

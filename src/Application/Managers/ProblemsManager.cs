@@ -8,18 +8,18 @@ using System.Linq.Expressions;
 
 namespace Kod.Application.Managers
 {
-    public class ProblemManager : BaseManager<Problem>, IProblemService
+    public class ProblemsManager : BaseManager<Problems>, IProblemsService
     {
         private readonly ILogger _logger;
-        private readonly IProblemRepository _problemRepository;
+        private readonly IProblemsRepository _problemRepository;
 
-        public ProblemManager(IProblemRepository problemRepository, ILogger<Problem> logger)
+        public ProblemsManager(IProblemsRepository problemRepository, ILogger<Problems> logger)
         {
             _logger = logger;   
             _problemRepository = problemRepository;
         }
 
-        public async Task<Problem> AddAsync(Problem problem)
+        public async Task<Problems> AddAsync(Problems problem)
         {
             _logger.LogInformation($"AddProblemAsync method started with @lang={problem}");
 
@@ -36,7 +36,7 @@ namespace Kod.Application.Managers
             return addedProblem;
         }
 
-        public async Task<List<Problem>> GetListAsync(Expression<Func<Problem, bool>>? predicate)
+        public async Task<List<Problems>> GetListAsync(Expression<Func<Problems, bool>>? predicate)
         {
             _logger.LogInformation($"GetProblemListAsync method started with @predicate={predicate}");
 

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Configurations;
 
-public class ProgrammingLanguageConfiguration : IEntityTypeConfiguration<ProgrammingLanguage>
+public class ProgrammingLanguagesConfiguration : IEntityTypeConfiguration<ProgrammingLanguages>
 {
-    public void Configure(EntityTypeBuilder<ProgrammingLanguage> builder)
+    public void Configure(EntityTypeBuilder<ProgrammingLanguages> builder)
     {
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Name).HasMaxLength(24).IsRequired();

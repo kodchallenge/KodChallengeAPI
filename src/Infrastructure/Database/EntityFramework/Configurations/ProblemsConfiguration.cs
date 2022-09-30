@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Configurations
 {
-    public class ProblemConfiguration : IEntityTypeConfiguration<Problem>
+    public class ProblemsConfiguration : IEntityTypeConfiguration<Problems>
     {
-        public void Configure(EntityTypeBuilder<Problem> builder)
+        public void Configure(EntityTypeBuilder<Problems> builder)
         {
             
         }

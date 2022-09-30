@@ -4,9 +4,9 @@ using Kod.Infrastructure.Database.EntityFramework.Contexts;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Repositories;
 
-internal class UserRepository : EfRepositoryBase<User, KodContext>, IUserRepository
+internal class UsersRepository : EfRepositoryBase<Users, KodContext>, IUsersRepository
 {
-    public UserRepository(KodContext context) : base(context)
+    public UsersRepository(KodContext context) : base(context)
     {
     }
 }

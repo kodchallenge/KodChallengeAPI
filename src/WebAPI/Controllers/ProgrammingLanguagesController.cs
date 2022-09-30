@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kod.WebAPI.Controllers
 {
-    public class ProgrammingLanguageController : ApiControllerBase
+    public class ProgrammingLanguagesController : ApiControllerBase
     {
         private readonly ILogger _logger;
 
-        public ProgrammingLanguageController(ILogger<ProgrammingLanguageController> logger)
+        public ProgrammingLanguagesController(ILogger<ProgrammingLanguagesController> logger)
         {
             _logger = logger;
         }

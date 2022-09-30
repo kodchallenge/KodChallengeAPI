@@ -14,8 +14,8 @@ namespace Kod.Application.Modules.ProgrammingLang.Queries
     {
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
-        private readonly IProgrammingLanguageService _programmingLanguageService;
-        public GetAllProgrammingLanguagesQueryHandler(ILogger<GetAllProgrammingLanguagesQueryHandler> logger, IMapper mapper, IProgrammingLanguageService programmingLanguageService)
+        private readonly IProgrammingLanguagesService _programmingLanguageService;
+        public GetAllProgrammingLanguagesQueryHandler(ILogger<GetAllProgrammingLanguagesQueryHandler> logger, IMapper mapper, IProgrammingLanguagesService programmingLanguageService)
         {
             _logger = logger;
             _mapper = mapper;

@@ -5,9 +5,9 @@ using Kod.Infrastructure.Database.EntityFramework.Contexts;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Repositories
 {
-    internal class ProgrammingLanguageRepository : EfRepositoryBase<ProgrammingLanguage, KodContext>, IProgrammingLanguageRepository
+    internal class ProgrammingLanguagesRepository : EfRepositoryBase<ProgrammingLanguages, KodContext>, IProgrammingLanguagesRepository
     {
-        public ProgrammingLanguageRepository(KodContext context) : base(context)
+        public ProgrammingLanguagesRepository(KodContext context) : base(context)
         {
         }
     }

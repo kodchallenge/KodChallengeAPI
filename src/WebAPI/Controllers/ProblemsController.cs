@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kod.WebAPI.Controllers
 {
-    public class ProblemController : ApiControllerBase
+    public class ProblemsController : ApiControllerBase
     {
         private readonly ILogger _logger;
 
-        public ProblemController(ILogger<Problem> logger)
+        public ProblemsController(ILogger<Problems> logger)
         {
             _logger = logger;   
         }

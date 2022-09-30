@@ -12,9 +12,9 @@ namespace Kod.Application.Modules.UserModules.Queries
 
     public record GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, Paginate<GetAllUsersQueryResponse>>
     {
-        private readonly IUserService _userService;
+        private readonly IUsersService _userService;
         private readonly IMapper _mapper;
-        public GetAllUsersQueryHandler(IUserService userService, IMapper mapper)
+        public GetAllUsersQueryHandler(IUsersService userService, IMapper mapper)
         {
             _userService = userService;
             _mapper = mapper;

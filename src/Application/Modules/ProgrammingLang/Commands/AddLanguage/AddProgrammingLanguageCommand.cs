@@ -11,9 +11,9 @@ namespace Kod.Application.Modules.ProgrammingLang.Commands
 
     public record AddProgrammingLanguageCommandHandler : IRequestHandler<AddProgrammingLanguageCommand, AddProgrammingLanguageCommandResponse>
     {
-        private readonly IProgrammingLanguageService _programmingLanguageService;
+        private readonly IProgrammingLanguagesService _programmingLanguageService;
 
-        public AddProgrammingLanguageCommandHandler(IProgrammingLanguageService programmingLanguageService)
+        public AddProgrammingLanguageCommandHandler(IProgrammingLanguagesService programmingLanguageService)
         {
             _programmingLanguageService = programmingLanguageService;
         }
@@ -21,7 +21,7 @@ namespace Kod.Application.Modules.ProgrammingLang.Commands
         public async Task<AddProgrammingLanguageCommandResponse> Handle(AddProgrammingLanguageCommand request, CancellationToken cancellationToken)
         {
 
-            ProgrammingLanguage newProgrammingLanguage = new (request.Name, request.Slug);
+            ProgrammingLanguages newProgrammingLanguage = new (request.Name, request.Slug);
 
             var addedProgrammingLanguage = await _programmingLanguageService.AddAsync(newProgrammingLanguage);
 

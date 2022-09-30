@@ -22,10 +22,10 @@ namespace Kod.Infrastructure
         private static void AddInfrastructureDependencies(this IServiceCollection services)
         {
             //Repositories
-            services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ICategoriRepository, CategoriRepository>();
-            services.AddScoped<IProblemRepository, ProblemRepository>();   
+            services.AddScoped<IProgrammingLanguagesRepository, ProgrammingLanguagesRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
+            services.AddScoped<ICategoriesRepository, CategoriesRepository>();
+            services.AddScoped<IProblemsRepository, ProblemsRepository>();   
         }
     }
 }

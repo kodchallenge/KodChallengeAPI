@@ -15,8 +15,8 @@ namespace Kod.Application.Modules.CategoriesModules.Queries
     {
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
-        private readonly ICategoriService _categoriService;
-        public GetAllCategoriesQueryHandler(ILogger<GetAllCategoriesQueryHandler> logger, IMapper mapper, ICategoriService categoriService)
+        private readonly ICategoriesService _categoriService;
+        public GetAllCategoriesQueryHandler(ILogger<GetAllCategoriesQueryHandler> logger, IMapper mapper, ICategoriesService categoriService)
         {
             _logger = logger;
             _mapper = mapper;

@@ -20,10 +20,10 @@ namespace Kod.Application
 
         public static void AddApplicationDependencyInjection(this IServiceCollection services)
         {
-            services.AddTransient<IProgrammingLanguageService, ProgrammingLanguageManager>();
-            services.AddTransient<IUserService, UserManager>();
-            services.AddTransient<ICategoriService, CategoriManager>();
-            services.AddTransient<IProblemService, ProblemManager>();
+            services.AddTransient<IProgrammingLanguagesService, ProgrammingLanguagesManager>();
+            services.AddTransient<IUsersService, UsersManager>();
+            services.AddTransient<ICategoriesService, CategoriesManager>();
+            services.AddTransient<IProblemsService, ProblemsManager>();
         }
     }
 }

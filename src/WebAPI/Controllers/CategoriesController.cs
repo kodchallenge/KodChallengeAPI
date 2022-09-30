@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kod.WebAPI.Controllers
 {
-    public class CategoriController : ApiControllerBase 
+    public class CategoriesController : ApiControllerBase 
     {
         private readonly ILogger _logger;
 
-        public CategoriController(ILogger<CategoriController> logger)
+        public CategoriesController(ILogger<CategoriesController> logger)
         {
             _logger = logger;
         }

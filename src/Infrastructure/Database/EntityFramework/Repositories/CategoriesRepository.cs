@@ -5,9 +5,9 @@ using Kod.Infrastructure.Database.EntityFramework.Contexts;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Repositories
 {
-    internal class CategoriRepository : EfRepositoryBase<Categori, KodContext>, ICategoriRepository
+    internal class CategoriesRepository : EfRepositoryBase<Categories, KodContext>, ICategoriesRepository
     {
-        public CategoriRepository(KodContext context) : base(context)
+        public CategoriesRepository(KodContext context) : base(context)
         {
         }
     }

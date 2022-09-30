@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kod.WebAPI.Controllers
 {
-    public class UserController : ApiControllerBase
+    public class UsersController : ApiControllerBase
     {
         [HttpGet("")]
         public async Task<IActionResult> GetUsersList([FromQuery] DefaultPaginateRequest paginateRequest) 

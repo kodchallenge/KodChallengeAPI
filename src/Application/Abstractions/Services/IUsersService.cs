@@ -4,7 +4,7 @@ using Kod.Core.Domain.Models;
 using Kod.Domain.Models;
 
 namespace Kod.Application.Abstractions.Services;
-public interface IUserService : IBaseService<User>
+public interface IUsersService : IBaseService<Users>
 {
-    Task<Paginate<User>> GetListWithPaginate(IPaginateRequest request);
+    Task<Paginate<Users>> GetListWithPaginate(IPaginateRequest request);
 }

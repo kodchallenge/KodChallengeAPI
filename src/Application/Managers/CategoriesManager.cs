@@ -8,18 +8,18 @@ using System.Linq.Expressions;
 
 namespace Kod.Application.Managers
 {
-    public class CategoriManager : BaseManager<Categori>, ICategoriService
+    public class CategoriesManager : BaseManager<Categories>, ICategoriesService
     {
         private readonly ILogger _logger;
-        private readonly ICategoriRepository _categoriesRepository;
+        private readonly ICategoriesRepository _categoriesRepository;
 
-        public CategoriManager(ILogger<CategoriManager> logger, ICategoriRepository categoriesRepository)
+        public CategoriesManager(ILogger<CategoriesManager> logger, ICategoriesRepository categoriesRepository)
         {
             _logger = logger;
             _categoriesRepository = categoriesRepository;
         }
     
-        public async Task<Categori> AddAsync(Categori categori)
+        public async Task<Categories> AddAsync(Categories categori)
         {
             _logger.LogInformation($"AddCategoriesAsync method started with @categori={categori}");
             var isExistsName = await _categoriesRepository.GetAsync(x => x.Name.Equals(categori.Name));
@@ -34,7 +34,7 @@ namespace Kod.Application.Managers
             return addedCategori;
         }
 
-        public async Task<List<Categori>> GetListAsync(Expression<Func<Categori, bool>>? predicate)
+        public async Task<List<Categories>> GetListAsync(Expression<Func<Categories, bool>>? predicate)
         {
             _logger.LogInformation($"GetCategoriListAsync method started with @predicate={predicate}");
 

@@ -8,18 +8,18 @@ using Kod.Application.Constants.Messages;
 
 namespace Kod.Application.Managers
 {
-    public class ProgrammingLanguageManager : BaseManager<ProgrammingLanguage>, IProgrammingLanguageService
+    public class ProgrammingLanguagesManager : BaseManager<ProgrammingLanguages>, IProgrammingLanguagesService
     {
         private readonly ILogger _logger;
-        private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
+        private readonly IProgrammingLanguagesRepository _programmingLanguageRepository;
 
-        public ProgrammingLanguageManager(ILogger<ProgrammingLanguageManager> logger, IProgrammingLanguageRepository programmingLanguageRepository)
+        public ProgrammingLanguagesManager(ILogger<ProgrammingLanguagesManager> logger, IProgrammingLanguagesRepository programmingLanguageRepository)
         {
             _logger = logger;
             _programmingLanguageRepository = programmingLanguageRepository;
         }
 
-        public async Task<ProgrammingLanguage> AddAsync(ProgrammingLanguage lang)
+        public async Task<ProgrammingLanguages> AddAsync(ProgrammingLanguages lang)
         {
             _logger.LogInformation($"AddProgrammingLanguageAsync method started with @lang={lang}");
             
@@ -36,7 +36,7 @@ namespace Kod.Application.Managers
             return addedProgrammingLanguage;
         }
 
-        public async Task<List<ProgrammingLanguage>> GetListAsync(Expression<Func<ProgrammingLanguage, bool>>? predicate)
+        public async Task<List<ProgrammingLanguages>> GetListAsync(Expression<Func<ProgrammingLanguages, bool>>? predicate)
         {
             _logger.LogInformation($"GetProgrammingLanguageListAsync method started with @predicate={predicate}");
 
