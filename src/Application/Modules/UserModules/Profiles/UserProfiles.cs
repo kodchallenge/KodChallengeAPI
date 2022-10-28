@@ -8,7 +8,7 @@ namespace Kod.Application.Modules.ProgrammingLang.Profiles
     {
         public UserProfiles()
         {
-            CreateMap<User, GetAllUsersQueryResponse>().ReverseMap();
+            CreateMap<Users, GetAllUsersQueryResponse>().ReverseMap();
         }
     }
 }

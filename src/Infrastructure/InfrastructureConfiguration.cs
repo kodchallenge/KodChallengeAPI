@@ -16,16 +16,16 @@ namespace Kod.Infrastructure
         
         private static void AddDatabases(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<KodContext>(options => options.UseSqlServer(configuration.GetConnectionString("Kod_DevDB")));
+            services.AddDbContext<KodContext>(options => options.UseNpgsql(configuration.GetConnectionString("Kod_DevDB")));
         }
 
         private static void AddInfrastructureDependencies(this IServiceCollection services)
         {
             //Repositories
-            services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ICategoriRepository, CategoriRepository>();
-            
+            services.AddScoped<IProgrammingLanguagesRepository, ProgrammingLanguagesRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
+            services.AddScoped<ICategoriesRepository, CategoriesRepository>();
+            services.AddScoped<IProblemsRepository, ProblemsRepository>();   
         }
     }
 }

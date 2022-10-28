@@ -17,3 +17,6 @@ app.ApplyConfiguration();
 app.MapControllers();
 
 app.Run();
+
+
+// TODO: Ad implementation of ScriptedProblems, UsrSolutions on infrastructure, application, and webapi projects
