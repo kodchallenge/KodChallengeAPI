@@ -34,6 +34,11 @@ namespace Kod.Application.Managers
             return addedCategori;
         }
 
+        public Task<Categories> DeleteAsync(Categories categori)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<Categories>> GetListAsync(Expression<Func<Categories, bool>>? predicate)
         {
             _logger.LogInformation($"GetCategoriListAsync method started with @predicate={predicate}");
@@ -45,5 +50,22 @@ namespace Kod.Application.Managers
             return list.ToList();
         }
 
+        public async Task<Categories> UpdateAsync(Categories categori)
+        {
+            _logger.LogInformation($"UpdateCategoriesAsync method started with @categori={categori}");
+            var isExistsName = await _categoriesRepository.GetAsync(x => x.Id.Equals(categori.Id));
+            if (isExistsName != null)
+            {
+                throw new InternalException(Messages.DublicatedName);
+            }
+            // ToDo: check this function
+            isExistsName.Name = categori.Name;
+            isExistsName.Slug = categori.Slug;
+
+            var updatedCategori = await _categoriesRepository.UpdateAsync(isExistsName);
+
+            _logger.LogInformation($"AddCategoriAsync method finished with @addedCategori={updatedCategori}");
+            return updatedCategori;
+        }
     }
 }
