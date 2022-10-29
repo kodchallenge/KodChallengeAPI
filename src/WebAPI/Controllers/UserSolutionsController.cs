@@ -2,11 +2,11 @@
 
 namespace Kod.WebAPI.Controllers
 {
-    public class ProblemSolutionsController : ApiControllerBase
+    public class UserSolutionsController : ApiControllerBase
     {
         private readonly ILogger _logger;
 
-        public ProblemSolutionsController(ILogger<Problems> logger)
+        public UserSolutionsController(ILogger<Problems> logger)
         {
             _logger = logger;
         }

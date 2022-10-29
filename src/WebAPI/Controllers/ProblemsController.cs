@@ -1,6 +1,4 @@
-﻿using Kod.Application.Modules.ProgrammingLang.Queries;
-using Kod.Domain.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Kod.Domain.Models;
 
 namespace Kod.WebAPI.Controllers
 {

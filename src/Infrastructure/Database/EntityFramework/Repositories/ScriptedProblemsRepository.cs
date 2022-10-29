@@ -4,9 +4,9 @@ using Kod.Infrastructure.Database.EntityFramework.Contexts;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Repositories;
 
-internal class ProblemSolutionsRepository : EfRepositoryBase<ProblemSolutions, KodContext>, IProblemSolutionsRepository
+internal class ScriptedProblemsRepository : EfRepositoryBase<ScriptedProblems, KodContext>, IScriptedProblemsRepository
 {
-    public ProblemSolutionsRepository(KodContext context) : base(context)
+    public ScriptedProblemsRepository(KodContext context) : base(context)
     {
     }
 }

@@ -26,6 +26,9 @@ namespace Kod.Infrastructure
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<ICategoriesRepository, CategoriesRepository>();
             services.AddScoped<IProblemsRepository, ProblemsRepository>();   
+            services.AddScoped<IUserSolutionsRepository, UserSolutionsRepository>();   
+            services.AddScoped<IProblemSolutionsRepository, ProblemSolutionsRepository>();   
+            services.AddScoped<IScriptedProblemsRepository, ScriptedProblemsRepository>();   
         }
     }
 }
