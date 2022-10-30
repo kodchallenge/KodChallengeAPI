@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Configurations
 {
-    internal class UsersConfigurations : IEntityTypeConfiguration<Users>
+    internal class UsersConfiguration : IEntityTypeConfiguration<Users>
     {
         public void Configure(EntityTypeBuilder<Users> builder)
         {
