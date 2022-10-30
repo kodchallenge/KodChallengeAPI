@@ -36,6 +36,11 @@ namespace Kod.Application.Managers
             return addedProblem;
         }
 
+        public Task<Problems> DeleteAsync(Problems problem)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<Problems>> GetListAsync(Expression<Func<Problems, bool>>? predicate)
         {
             _logger.LogInformation($"GetProblemListAsync method started with @predicate={predicate}");
@@ -45,6 +50,11 @@ namespace Kod.Application.Managers
             _logger.LogInformation($"GetProblemListAsync method finished with @list={list}");
 
             return list.ToList();
+        }
+
+        public Task<Problems> UpdateAsync(Problems problem)
+        {
+            throw new NotImplementedException();
         }
     }
 }

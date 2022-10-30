@@ -9,7 +9,9 @@ namespace Kod.Infrastructure.Database.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<ProblemSolutions> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.ProblemId).IsRequired();
+            builder.Property(x => x.UserSolutionId).IsRequired();
         }
     }
 }

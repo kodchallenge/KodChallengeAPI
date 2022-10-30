@@ -36,6 +36,11 @@ namespace Kod.Application.Managers
             return addedProgrammingLanguage;
         }
 
+        public Task<ProgrammingLanguages> DeleteAsync(ProgrammingLanguages programmingLanguage)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<ProgrammingLanguages>> GetListAsync(Expression<Func<ProgrammingLanguages, bool>>? predicate)
         {
             _logger.LogInformation($"GetProgrammingLanguageListAsync method started with @predicate={predicate}");
@@ -45,6 +50,11 @@ namespace Kod.Application.Managers
             _logger.LogInformation($"GetProgrammingLanguageListAsync method finished with @list={list}");
 
             return list.ToList();
+        }
+
+        public Task<ProgrammingLanguages> UpdateAsync(ProgrammingLanguages programmingLanguage)
+        {
+            throw new NotImplementedException();
         }
     }
 }

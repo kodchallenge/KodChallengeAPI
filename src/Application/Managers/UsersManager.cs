@@ -18,6 +18,11 @@ public class UsersManager : BaseManager<Users>, IUsersService
         _logger = logger;
     }
 
+    public Task<Users> DeleteAsync(Users user)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<Paginate<Users>> GetListWithPaginate(IPaginateRequest request)
     {
         _logger.LogInformation($"GetListUsersWithPaginate started with @request = {request}");
@@ -26,5 +31,10 @@ public class UsersManager : BaseManager<Users>, IUsersService
         
         _logger.LogInformation($"GetListUsersWithPaginate finished with @list={list}");
         return list;
+    }
+
+    public Task<Users> UpdateAsync(Users user)
+    {
+        throw new NotImplementedException();
     }
 }

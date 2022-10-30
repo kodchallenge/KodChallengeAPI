@@ -24,6 +24,9 @@ namespace Kod.Application
             services.AddTransient<IUsersService, UsersManager>();
             services.AddTransient<ICategoriesService, CategoriesManager>();
             services.AddTransient<IProblemsService, ProblemsManager>();
+            services.AddTransient<IUserSolutionsService, UserSolutionsManager>();   
+            services.AddTransient<IProblemSolutionsService, ProblemSolutionsManager>();
+            services.AddTransient<IScriptedProblemsService, ScriptedProblemsManager>();
         }
     }
 }

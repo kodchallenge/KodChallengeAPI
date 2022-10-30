@@ -9,6 +9,9 @@ namespace Kod.Infrastructure.Database.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<Problems> builder)
         {
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Title).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.Description).IsRequired().HasMaxLength(2000);
             
         }
     }

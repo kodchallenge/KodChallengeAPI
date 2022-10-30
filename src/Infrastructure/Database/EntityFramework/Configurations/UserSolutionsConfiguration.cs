@@ -8,7 +8,10 @@ namespace Infrastructure.Database.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<UserSolutions> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(x => x.Id);  
+            builder.Property(x => x.Score).IsRequired();    
+            builder.Property(x => x.UserId).IsRequired(); 
+            builder.Property(x=> x.SolutionPath).IsRequired();  
         }
     }
 }
