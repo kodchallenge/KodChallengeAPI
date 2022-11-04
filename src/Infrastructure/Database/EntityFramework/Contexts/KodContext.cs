@@ -1,6 +1,7 @@
 ﻿using Kod.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using System.Security.Principal;
 
 namespace Kod.Infrastructure.Database.EntityFramework.Contexts
 {
@@ -8,8 +9,10 @@ namespace Kod.Infrastructure.Database.EntityFramework.Contexts
     {
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Categories>().ToTable("categories", "public");
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(builder);
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
         public KodContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
         {
@@ -22,7 +25,7 @@ namespace Kod.Infrastructure.Database.EntityFramework.Contexts
 
         public virtual DbSet<Problems> problems { set; get; }
 
-        public virtual DbSet<Categories> categories { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
 
         public virtual DbSet<ScriptedProblems> scripted_problems { set; get; }  
 
