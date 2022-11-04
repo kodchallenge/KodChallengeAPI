@@ -19,42 +19,60 @@ namespace Kod.Application.Managers
             _programmingLanguageRepository = programmingLanguageRepository;
         }
 
-        public async Task<ProgrammingLanguages> AddAsync(ProgrammingLanguages lang)
+        public async Task<ProgrammingLanguages> AddAsync(ProgrammingLanguages programmingLanguage)
         {
-            _logger.LogInformation($"AddProgrammingLanguageAsync method started with @lang={lang}");
+            _logger.LogInformation($"AddProgrammingLanguagesAsync method started with @programmingLanguage={programmingLanguage}");
             
             // Example business logic
-            var isExistsName = await _programmingLanguageRepository.GetAsync(x => x.Name.Equals(lang.Name));
+            var isExistsName = await _programmingLanguageRepository.GetAsync(x => x.Name.Equals(programmingLanguage.Name));
             if(isExistsName != null)
             {
                 throw new InternalException(Messages.DublicatedName);
             }
 
-            var addedProgrammingLanguage = await _programmingLanguageRepository.AddAsync(lang);
+            var addedProgrammingLanguage = await _programmingLanguageRepository.AddAsync(programmingLanguage);
 
-            _logger.LogInformation($"AddProgrammingLanguageAsync method finished with @addedProgrammingLanguage={addedProgrammingLanguage}");
+            _logger.LogInformation($"AddProgrammingLanguagesAsync method finished with @addedProgrammingLanguage={addedProgrammingLanguage}");
             return addedProgrammingLanguage;
         }
 
-        public Task<ProgrammingLanguages> DeleteAsync(ProgrammingLanguages programmingLanguage)
+        public async Task<ProgrammingLanguages> DeleteAsync(ProgrammingLanguages programmingLanguage)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation($"DeleteProgrammingLanguagesAsync method started with @programmingLanguage={programmingLanguage}");
+            var isExist = await _programmingLanguageRepository.GetAsync(x => x.Name.Equals(programmingLanguage.Name));
+            if (isExist == null)
+            {
+                throw new InternalException(Messages.NotExist);
+            }
+            await _programmingLanguageRepository.DeleteAsync(programmingLanguage);
+            _logger.LogInformation($"DeleteProgrammingLanguagesAsync method finished with @deletedProgrammingLanguage={programmingLanguage}");
+            return programmingLanguage;
         }
 
         public async Task<List<ProgrammingLanguages>> GetListAsync(Expression<Func<ProgrammingLanguages, bool>>? predicate)
         {
-            _logger.LogInformation($"GetProgrammingLanguageListAsync method started with @predicate={predicate}");
+            _logger.LogInformation($"GetProgrammingLanguagesListAsync method started with @predicate={predicate}");
 
             var list = await _programmingLanguageRepository.GetListAysnc(predicate);
 
-            _logger.LogInformation($"GetProgrammingLanguageListAsync method finished with @list={list}");
+            _logger.LogInformation($"GetProgrammingLanguagesListAsync method finished with @list={list}");
 
             return list.ToList();
         }
 
-        public Task<ProgrammingLanguages> UpdateAsync(ProgrammingLanguages programmingLanguage)
+        public async Task<ProgrammingLanguages> UpdateAsync(ProgrammingLanguages programmingLanguage)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation($"UpdateProgrammingLanguagesAsync method started with @programmingLanguage={programmingLanguage}");
+            var isExist = await _programmingLanguageRepository.GetAsync(x => x.Id.Equals(programmingLanguage.Id));
+            if (isExist == null)
+            {
+                throw new InternalException(Messages.NotExist);
+            }
+            isExist.Name = programmingLanguage.Name;
+            isExist.Slug = programmingLanguage.Slug;
+            var updatedProgrammingLanguage = await _programmingLanguageRepository.UpdateAsync(isExist);
+            _logger.LogInformation($"UpdateProgrammingLanguagesAsync method finished with @updatedProgrammingLanguage={updatedProgrammingLanguage}");
+            return updatedProgrammingLanguage;
         }
     }
 }

@@ -24,11 +24,11 @@ namespace Kod.Infrastructure.Database.EntityFramework.Contexts
 
         public virtual DbSet<Categories> categories { get; set; }
 
-        public virtual DbSet<ScriptedProblems> scriptedProblems { set; get; }  
+        public virtual DbSet<ScriptedProblems> scripted_problems { set; get; }  
 
-        public virtual DbSet<ProblemSolutions> problemSolutions { set; get; }
+        public virtual DbSet<ProblemSolutions> problem_solutions { set; get; }
 
-        public virtual DbSet<UserSolutions> userSolutions { set; get; }
+        public virtual DbSet<UserSolutions> user_solutions { set; get; }
 
 
     }

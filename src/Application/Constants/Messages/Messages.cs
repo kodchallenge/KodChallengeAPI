@@ -10,5 +10,7 @@ namespace Kod.Application.Constants.Messages
         public static string LastnameLengthMustBetween3And30 = "errors.lastnameLengthMustBetween3And30";
         public static string LanguageNameLengthMustBetween1And24 = "errors.languageNameLengthMustBetween1And24";
         public static string DublicatedName = "errors.dublicatedName";
+        public static string NotExist = "errors.notExist";
+        public static string DublicatedId = "errors.dublicatedId";
     }
 }

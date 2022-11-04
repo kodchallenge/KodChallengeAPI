@@ -7,7 +7,6 @@ public interface IUsersService : IBaseService<Users>
 {
     Task<Paginate<Users>> GetListWithPaginate(IPaginateRequest request);
 
-
     Task<Users> UpdateAsync(Users user);
 
     Task<Users> DeleteAsync(Users user);

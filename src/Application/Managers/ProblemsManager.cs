@@ -21,9 +21,8 @@ namespace Kod.Application.Managers
 
         public async Task<Problems> AddAsync(Problems problem)
         {
-            _logger.LogInformation($"AddProblemAsync method started with @lang={problem}");
-
-            // Example business logic
+            // TODO:: Searching without Id
+            _logger.LogInformation($"AddProblemsAsync method started with @problem={problem}");
             var isExistsName = await _problemRepository.GetAsync(x => x.Id.Equals(problem.Id));
             if (isExistsName != null)
             {
@@ -32,29 +31,51 @@ namespace Kod.Application.Managers
 
             var addedProblem = await _problemRepository.AddAsync(problem);
 
-            _logger.LogInformation($"AddProblemAsync method finished with @addedProblem={addedProblem}");
+            _logger.LogInformation($"AddProblemsAsync method finished with @addedProblem={addedProblem}");
             return addedProblem;
         }
 
-        public Task<Problems> DeleteAsync(Problems problem)
+        public async Task<Problems> DeleteAsync(Problems problem)
         {
-            throw new NotImplementedException();
+            // TODO:: Searching without Id
+            _logger.LogInformation($"DeleteProblemsAsync method started with @problem={problem}");
+            var isExistName = await _problemRepository.GetAsync(x => x.Id == problem.Id);
+            if (isExistName == null)
+            {
+                throw new InternalException(Messages.NotExist);
+            }
+            await _problemRepository.DeleteAsync(problem);
+            _logger.LogInformation($"DeleteProblemsAsync method finished with @deletedProblem={problem}");
+            return problem;
         }
 
         public async Task<List<Problems>> GetListAsync(Expression<Func<Problems, bool>>? predicate)
         {
-            _logger.LogInformation($"GetProblemListAsync method started with @predicate={predicate}");
+            _logger.LogInformation($"GetProblemsListAsync method started with @predicate={predicate}");
 
             var list = await _problemRepository.GetListAysnc(predicate);
 
-            _logger.LogInformation($"GetProblemListAsync method finished with @list={list}");
+            _logger.LogInformation($"GetProblemsListAsync method finished with @list={list}");
 
             return list.ToList();
         }
 
-        public Task<Problems> UpdateAsync(Problems problem)
+        public async Task<Problems> UpdateAsync(Problems problem)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation($"UpdateProblemsAsync method started with @problem={problem}");
+            var isExistName = await _problemRepository.GetAsync(x => x.Id == problem.Id);
+            if (isExistName == null)
+            {
+                throw new InternalException(Messages.NotExist);
+            }
+            isExistName.Title = problem.Title;
+            isExistName.Point = problem.Point;
+            isExistName.IsPrivate = problem.IsPrivate;
+            isExistName.Description = problem.Description; 
+            isExistName.CategoriId = problem.CategoriId;
+            var updatedProblem = await _problemRepository.UpdateAsync(isExistName);
+            _logger.LogInformation($"UpdatedProblemsAsync method finished with @updatedProblem={updatedProblem}");
+            return updatedProblem;
         }
     }
 }

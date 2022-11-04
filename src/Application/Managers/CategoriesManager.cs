@@ -30,22 +30,30 @@ namespace Kod.Application.Managers
 
             var addedCategori = await _categoriesRepository.AddAsync(categori);
 
-            _logger.LogInformation($"AddCategoriAsync method finished with @addedCategori={addedCategori}");
+            _logger.LogInformation($"AddCategoriesAsync method finished with @addedCategori={addedCategori}");
             return addedCategori;
         }
 
-        public Task<Categories> DeleteAsync(Categories categori)
+        public async Task<Categories> DeleteAsync(Categories categori)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation($"DeleteCategoriesAsync method started with @categori={categori}");
+            var isExistName = await _categoriesRepository.GetAsync(x => x.Name.Equals(categori.Name));
+            if (isExistName == null){
+                throw new InternalException(Messages.NotExist);
+            }
+
+            await _categoriesRepository.DeleteAsync(categori);
+            _logger.LogInformation($"DeletedCategoriesAsync method finished with @deletedCategori={categori}");
+            return categori;    
         }
 
         public async Task<List<Categories>> GetListAsync(Expression<Func<Categories, bool>>? predicate)
         {
-            _logger.LogInformation($"GetCategoriListAsync method started with @predicate={predicate}");
+            _logger.LogInformation($"GetCategoriesListAsync method started with @predicate={predicate}");
 
             var list = await _categoriesRepository.GetListAysnc(predicate);
 
-            _logger.LogInformation($"GetCategoriListAsync method finished with @list={list}");
+            _logger.LogInformation($"GetCategoriesListAsync method finished with @list={list}");
 
             return list.ToList();
         }
@@ -54,17 +62,17 @@ namespace Kod.Application.Managers
         {
             _logger.LogInformation($"UpdateCategoriesAsync method started with @categori={categori}");
             var isExistsName = await _categoriesRepository.GetAsync(x => x.Id.Equals(categori.Id));
-            if (isExistsName != null)
+            if (isExistsName == null)
             {
-                throw new InternalException(Messages.DublicatedName);
+                throw new InternalException(Messages.NotExist);
             }
-            // ToDo: check this function
+
             isExistsName.Name = categori.Name;
             isExistsName.Slug = categori.Slug;
 
             var updatedCategori = await _categoriesRepository.UpdateAsync(isExistsName);
 
-            _logger.LogInformation($"AddCategoriAsync method finished with @addedCategori={updatedCategori}");
+            _logger.LogInformation($"UpdateCategoriesAsync method finished with @updatedCategori={updatedCategori}");
             return updatedCategori;
         }
     }
