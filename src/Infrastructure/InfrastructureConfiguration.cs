@@ -16,7 +16,10 @@ namespace Kod.Infrastructure
         
         private static void AddDatabases(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<KodContext>(options => options.UseNpgsql(configuration.GetConnectionString("Kod_DevDB")));
+            services.AddDbContext<KodContext>(options => {
+                options.UseNpgsql(configuration.GetConnectionString("Kod_DevDB"));
+                options.UseSnakeCaseNamingConvention();
+            });
         }
 
         private static void AddInfrastructureDependencies(this IServiceCollection services)
