@@ -19,19 +19,19 @@ namespace Kod.Infrastructure.Database.EntityFramework.Contexts
 
         }
 
-        public virtual DbSet<ProgrammingLanguages> languages { get; set; }
+        public virtual DbSet<ProgrammingLanguages> ProgrammingLanguages { get; set; }
         
-        public virtual DbSet<Users> users{ get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
-        public virtual DbSet<Problems> problems { set; get; }
+        public virtual DbSet<Problems> Problems { set; get; }
 
         public virtual DbSet<Categories> Categories { get; set; }
 
-        public virtual DbSet<ScriptedProblems> scripted_problems { set; get; }  
+        public virtual DbSet<ScriptedProblems> ScriptedProblems { set; get; }  
 
-        public virtual DbSet<ProblemSolutions> problem_solutions { set; get; }
+        public virtual DbSet<ProblemSolutions> ProblemSolutions { set; get; }
 
-        public virtual DbSet<UserSolutions> user_solutions { set; get; }
+        public virtual DbSet<UserSolutions> UserSolutions { set; get; }
 
 
     }
