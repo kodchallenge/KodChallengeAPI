@@ -22,7 +22,7 @@ public class UsersManager : BaseManager<Users>, IUsersService
     public async Task<Users> DeleteAsync(Users user)
     {
         _logger.LogInformation($"DeleteUsersAsync method started with @user={user}");
-        var isExistName = await _userRepository.GetAsync(x => x.Username.Equals(user.Username));
+        var isExistName = await _userRepository.GetAsync(x => x.UserName.Equals(user.UserName));
         if (isExistName == null)
         {
             throw new InternalException(Messages.NotExist);
@@ -45,13 +45,13 @@ public class UsersManager : BaseManager<Users>, IUsersService
     public async Task<Users> UpdateAsync(Users user)
     {
         _logger.LogInformation($"UpdateUsersAsync method started with @user={user}");
-        var isExistName = await _userRepository.GetAsync(x => x.Username.Equals(user.Username));
+        var isExistName = await _userRepository.GetAsync(x => x.UserName.Equals(user.UserName));
         if (isExistName == null)
         {
             throw new InternalException(Messages.NotExist);
         }
         isExistName.FullName = user.FullName;
-        isExistName.Username = user.Username;
+        isExistName.UserName = user.UserName;
         isExistName.Password = user.Password;
         isExistName.Email = user.Email;
         var updatedUser = await _userRepository.UpdateAsync(isExistName);

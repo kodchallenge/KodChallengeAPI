@@ -10,13 +10,15 @@ namespace Kod.Domain.Models
 
         public int ProblemId { get; set; }
 
-        public ProblemSolutions(int userSolutionId, int problemId)
+        public DateTime CreatedAt { get; set; }
+        public ProblemSolutions(int userSolutionId, int problemId, DateTime createdAt)
         {
             UserSolutionId = userSolutionId;
             ProblemId = problemId;
+            CreatedAt = createdAt;  
         }
 
-        public ProblemSolutions(int id, int userSolutionId, int problemId) : this(userSolutionId, problemId)
+        public ProblemSolutions(int id, int userSolutionId, int problemId, DateTime createdAt) : this(userSolutionId, problemId, createdAt)
         {
             Id = id;
         }

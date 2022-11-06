@@ -8,14 +8,16 @@ namespace Kod.Domain.Models
         public string Name { get; set; }
         public string Slug { get; set; }
 
-        public Categories(int id, string name, string slug) : this(name, slug)
+        public DateTime CreatedAt { get; set; }
+        public Categories(int id, string name, string slug, DateTime createdAt) : this(name, slug, createdAt)
         {
             Id = id;
         }
-        public Categories(string name, string slug)
+        public Categories(string name, string slug, DateTime createdAt)
         {
             Name = name;
             Slug = slug;
+            CreatedAt = createdAt;
         }
 
     }

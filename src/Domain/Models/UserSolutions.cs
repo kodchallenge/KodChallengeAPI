@@ -12,14 +12,16 @@ namespace Kod.Domain.Models
 
         public int Score { get; set; }
 
-        public UserSolutions( int userId, string solutionPath, int score)
+        public DateTime CreatedAt { get; set; }
+        public UserSolutions( int userId, string solutionPath, int score, DateTime createdAt)
         {
-            UserId= userId;
-            SolutionPath= solutionPath;
-            Score= score;
+            UserId = userId;
+            SolutionPath = solutionPath;
+            Score = score;
+            CreatedAt = createdAt;
         }
 
-        public UserSolutions(int id, int userId, string solutionPath, int score) : this(userId, solutionPath, score)
+        public UserSolutions(int id, int userId, string solutionPath, int score, DateTime createdAt) : this(userId, solutionPath, score, createdAt)
         {
             Id = id;
         }

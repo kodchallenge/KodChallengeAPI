@@ -9,14 +9,15 @@ namespace Kod.Domain.Models
 
         public int LanguageId { get; set; }
 
-        public ScriptedProblems(int problemId, int languageId)
+        public DateTime CreatedAt { get; set; } 
+        public ScriptedProblems(int problemId, int languageId, DateTime createdAt)
         {
             ProblemId = problemId;
             LanguageId = languageId;
-
+            CreatedAt = createdAt;  
         }
 
-        public ScriptedProblems(int id, int problemId, int languageId) : this(problemId, languageId)
+        public ScriptedProblems(int id, int problemId, int languageId, DateTime createdAt) : this(problemId, languageId, createdAt)
         {
             Id = id;
         }

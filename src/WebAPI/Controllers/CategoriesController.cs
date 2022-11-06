@@ -19,7 +19,7 @@ namespace Kod.WebAPI.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetAllCategories()
         {
-            var list = await Mediator.Send(new GetAllProgrammingLanguagesQuery());
+            var list = await Mediator.Send(new GetAllCategoriQuery());
             var response = list.ConvertAll(x => new GetAllCategoriesQueryResponse(x.Id, x.Name, x.Slug));
 
             return Ok(response, "listed");
@@ -35,7 +35,7 @@ namespace Kod.WebAPI.Controllers
         [HttpPut("")]
         public async Task<IActionResult> UpdateCategories(Categories categories)
         {
-            var updatedCategories = await Mediator.Send(new UpdateCategoriesCommand(categories.Name, categories.Slug));
+            var updatedCategories = await Mediator.Send(new UpdateCategoriesCommand(categories.Name, categories.Slug, categories.CreatedAt));
             return Ok(updatedCategories, "updated");
         }
     }

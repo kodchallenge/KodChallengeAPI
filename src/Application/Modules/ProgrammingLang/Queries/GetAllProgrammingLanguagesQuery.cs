@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Kod.Application.Abstractions.Services;
-using Kod.Core.Domain.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -8,7 +7,7 @@ namespace Kod.Application.Modules.ProgrammingLang.Queries
 {
     public record GetAllProgrammingLanguagesQuery() : IRequest<List<GetAllProgrammingLanguagesQueryResponse>>;
 
-    public record GetAllProgrammingLanguagesQueryResponse(int Id, string Name, string Slug);
+    public record GetAllProgrammingLanguagesQueryResponse(int Id, string Name, string Slug, DateTime CreatedAt);
 
     public record GetAllProgrammingLanguagesQueryHandler : IRequestHandler<GetAllProgrammingLanguagesQuery, List<GetAllProgrammingLanguagesQueryResponse>>
     {
@@ -25,6 +24,8 @@ namespace Kod.Application.Modules.ProgrammingLang.Queries
         public async Task<List<GetAllProgrammingLanguagesQueryResponse>> Handle(GetAllProgrammingLanguagesQuery request, CancellationToken cancellationToken)
         {
             var programmingLanguages = await _programmingLanguageService.GetListAsync(null);
+
+            // TODO :: Unsupported Map
 
             return programmingLanguages.ConvertAll(x => _mapper.Map<GetAllProgrammingLanguagesQueryResponse>(x));
         }
