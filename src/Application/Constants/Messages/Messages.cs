@@ -12,5 +12,6 @@ namespace Kod.Application.Constants.Messages
         public static string DublicatedName = "errors.dublicatedName";
         public static string NotExist = "errors.notExist";
         public static string DublicatedId = "errors.dublicatedId";
+        public static string MustBoolean = "errors.mustBoolean";
     }
 }

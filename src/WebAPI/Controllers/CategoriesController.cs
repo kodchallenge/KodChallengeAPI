@@ -1,7 +1,5 @@
 ﻿using Kod.Application.Modules.CategoriesModules.Queries;
-using Kod.Application.Modules.CategoriModules.Commands.AddCategories;
-using Kod.Application.Modules.CategoriModules.Commands.UpdateCategories;
-using Kod.Application.Modules.ProgrammingLang.Queries;
+using Kod.Application.Modules.CategoriModules.Commands;
 using Kod.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 

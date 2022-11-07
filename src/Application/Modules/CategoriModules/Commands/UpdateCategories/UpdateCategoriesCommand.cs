@@ -1,13 +1,8 @@
 ﻿using Kod.Application.Abstractions.Services;
 using Kod.Domain.Models;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Kod.Application.Modules.CategoriModules.Commands.UpdateCategories
+namespace Kod.Application.Modules.CategoriModules.Commands
 {
     public record UpdateCategoriesCommand(string Name, string Slug, DateTime CreatedAt) : IRequest<UpdateCategoriesCommandResponse>;
 

@@ -1,9 +1,8 @@
-﻿using Kod.Application.Abstractions.Repositories;
-using Kod.Application.Abstractions.Services;
+﻿using Kod.Application.Abstractions.Services;
 using Kod.Domain.Models;
 using MediatR;
 
-namespace Kod.Application.Modules.ProgrammingLang.Commands
+namespace Kod.Application.Modules.ProgrammingLanguageModules.Commands
 {
     public record AddProgrammingLanguageCommand(string Name, string Slug, DateTime CreatedAt) : IRequest<AddProgrammingLanguageCommandResponse>;
 
