@@ -15,11 +15,10 @@ namespace Kod.Application.Modules.ProblemModules.Validators
             RuleFor(s => s.Title).NotEmpty().WithMessage(Messages.NotEmpty);
             RuleFor(s => s.Title).NotNull().WithMessage(Messages.NotNull);
 
-            //RuleFor(s => s.Description).NotEmpty().WithMessage(Messages.NotEmpty);
+            RuleFor(s => s.Description).NotEmpty().WithMessage(Messages.NotEmpty);
 
             RuleFor(s => s.IsPrivate).NotEmpty().WithMessage(Messages.NotEmpty);
             RuleFor(s => s.IsPrivate).NotNull().WithMessage(Messages.NotNull);
-            //RuleFor(s => s.IsPrivate)..WithMessage(Messages.MustBoolean);
 
             RuleFor(s => s.Point).NotEmpty().WithMessage(Messages.NotEmpty);
             RuleFor(s => s.Point).NotNull().WithMessage(Messages.NotNull);
