@@ -19,7 +19,6 @@ namespace Kod.WebAPI.Controllers
         {
             var list = await Mediator.Send(new GetAllProgrammingLanguagesQuery());
             var response = list.ConvertAll(x => new GetAllProgrammingLanguageResponse(x.Id, x.Name, x.Slug, x.CreatedAt));
-            
             return Ok(response, "listed");
         }
     }

@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Kod.Application.Modules.CategoriModules.Commands.AddCategories
 {
-    public record AddCategoriesCommand(string Name, string Slug) : IRequest<AddCategoriesCommandResponse>;
+    public record AddCategoriesCommand(string Name, string Slug, DateTime CreatedAt) : IRequest<AddCategoriesCommandResponse>;
 
     public record AddCategoriesCommandResponse(int id);
 
@@ -18,7 +18,7 @@ namespace Kod.Application.Modules.CategoriModules.Commands.AddCategories
         }
         public async Task<AddCategoriesCommandResponse> Handle(AddCategoriesCommand request, CancellationToken cancellationToken)
         {
-            Categories addCategories = new(request.Name, request.Slug);
+            Categories addCategories = new(request.Name, request.Slug, request.CreatedAt);
             var categories = await _categoriService.AddAsync(addCategories);
 
             return new AddCategoriesCommandResponse(categories.Id);

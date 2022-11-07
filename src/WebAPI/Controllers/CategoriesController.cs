@@ -28,7 +28,7 @@ namespace Kod.WebAPI.Controllers
         [HttpPost("")]
         public async Task<IActionResult> AddCategories(Categories categories)
         {
-            var addedCategories = await Mediator.Send(new AddCategoriesCommand(categories.Name,categories.Slug));
+            var addedCategories = await Mediator.Send(new AddCategoriesCommand(categories.Name,categories.Slug, categories.CreatedAt));
             return Ok(addedCategories, "added");
         }
 

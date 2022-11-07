@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Kod.Application.Modules.CategoriModules.Commands.UpdateCategories
 {
-    public record UpdateCategoriesCommand(string Name, string Slug) : IRequest<UpdateCategoriesCommandResponse>;
+    public record UpdateCategoriesCommand(string Name, string Slug, DateTime CreatedAt) : IRequest<UpdateCategoriesCommandResponse>;
 
     public record UpdateCategoriesCommandResponse(int id);
 
@@ -23,7 +23,7 @@ namespace Kod.Application.Modules.CategoriModules.Commands.UpdateCategories
         }
         public async Task<UpdateCategoriesCommandResponse> Handle(UpdateCategoriesCommand request, CancellationToken cancellationToken)
         {
-            Categories addCategories = new(request.Name, request.Slug);
+            Categories addCategories = new(request.Name, request.Slug, request.CreatedAt);
             var categories = await _categoriService.UpdateAsync(addCategories);
 
             return new UpdateCategoriesCommandResponse(categories.Id);
