@@ -3,7 +3,7 @@ using Kod.Application.Abstractions.Services;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Kod.Application.Modules.ProgrammingLang.Queries
+namespace Kod.Application.Modules.ProgrammingLanguageModules.Queries
 {
     public record GetAllProgrammingLanguagesQueryResponse(DateTime CreatedAt, int Id, string Name, string Slug);
 

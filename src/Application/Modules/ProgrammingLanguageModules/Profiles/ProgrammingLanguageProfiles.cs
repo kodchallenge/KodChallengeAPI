@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Kod.Application.Modules.ProgrammingLang.Queries;
+using Kod.Application.Modules.ProgrammingLanguageModules.Queries;
 using Kod.Domain.Models;
 
-namespace Kod.Application.Modules.ProgrammingLang.Profiles
+namespace Kod.Application.Modules.ProgrammingLanguageModules.Profiles
 {
     public class ProgrammingLanguageProfiles : Profile
     {

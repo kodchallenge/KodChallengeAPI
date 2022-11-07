@@ -1,7 +1,7 @@
 ﻿
 using FluentValidation;
 using Kod.Application.Constants.Messages;
-using Kod.Application.Modules.ProgrammingLang.Commands;
+using Kod.Application.Modules.ProgrammingLanguageModules.Commands;
 
 namespace Kod.Application.Modules.ProgrammingLang.Validators
 {

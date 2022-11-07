@@ -1,12 +1,8 @@
 ﻿using FluentValidation;
 using Kod.Application.Constants.Messages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Kod.Application.Modules.CategoriModules.Commands;
 
-namespace Kod.Application.Modules.CategoriModules.Commands.UpdateCategories
+namespace Kod.Application.Modules.CategoriModules.Validators
 {
     public class UpdateCategoriesCommandValidator : AbstractValidator<UpdateCategoriesCommand>
     {

@@ -2,7 +2,7 @@
 using Kod.Application.Modules.UserModules.Queries;
 using Kod.Domain.Models;
 
-namespace Kod.Application.Modules.ProgrammingLang.Profiles
+namespace Kod.Application.Modules.UserModules.Profiles
 {
     public class UserProfiles : Profile
     {

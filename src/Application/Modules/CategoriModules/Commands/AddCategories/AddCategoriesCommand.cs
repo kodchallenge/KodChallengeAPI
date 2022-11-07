@@ -2,7 +2,7 @@
 using Kod.Domain.Models;
 using MediatR;
 
-namespace Kod.Application.Modules.CategoriModules.Commands.AddCategories
+namespace Kod.Application.Modules.CategoriModules.Commands
 {
     public record AddCategoriesCommand(string Name, string Slug, DateTime CreatedAt) : IRequest<AddCategoriesCommandResponse>;
 
