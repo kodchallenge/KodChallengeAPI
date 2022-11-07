@@ -25,6 +25,14 @@ namespace Kod.Domain.Models
             Point = point;
             CreatedAt = createdAt;  
         }
+        public Problems(int categoriId, string title, string description, bool isPrivate, int point)
+        {
+            CategoriId = categoriId;
+            Title = title;
+            Description = description;
+            IsPrivate = isPrivate;
+            Point = point;
+        }
 
         public Problems(int id, int categoriId, string title, string description, bool isPrivate, int point, DateTime createdAt) : this(categoriId, title, description, isPrivate, point, createdAt)
         {

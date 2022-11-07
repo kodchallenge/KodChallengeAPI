@@ -16,8 +16,8 @@ namespace Kod.WebAPI.Controllers
         [HttpPost("")]
         public async Task<IActionResult> AddProblems(Problems problems)
         {
-            var addedProblems = await Mediator.Send(new AddProblemCommand(problems.CategoriId, problems.Title, problems.Description, problems.IsPrivate, problems.Point, problems.CreatedAt));
-            return Ok(AddProblems, "added");
+            var addedProblems = await Mediator.Send(new AddProblemCommand(problems.CategoriId, problems.Title, problems.Description, problems.IsPrivate, problems.Point, DateTime.Now));
+            return Ok(addedProblems, "added");
         }
     }
 }
