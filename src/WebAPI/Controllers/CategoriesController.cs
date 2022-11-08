@@ -30,11 +30,12 @@ namespace Kod.WebAPI.Controllers
             return Ok(addedCategories, "added");
         }
 
-        [HttpPut("")]
-        public async Task<IActionResult> UpdateCategories(Categories categories)
-        {
-            var updatedCategories = await Mediator.Send(new UpdateCategoriesCommand(categories.Name, categories.Slug, categories.CreatedAt));
-            return Ok(updatedCategories, "updated");
-        }
+        //[HttpPut("")]
+        //public async Task<IActionResult> UpdateCategories(Categories categories)
+        //{
+        //    var updatedCategories = await Mediator.Send(new UpdateCategoriesCommand(categories.Name, categories.Slug, categories.CreatedAt));
+        //    return Ok(updatedCategories, "updated");
+        //}
+
     }
 }
