@@ -39,5 +39,6 @@ namespace Kod.Domain.Models
         {
             Id = id;
         }
+
     }
 }
