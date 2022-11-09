@@ -11,7 +11,7 @@ namespace Kod.WebAPI.Controllers
 
         public ProblemsController(ILogger<Problems> logger)
         {
-            _logger = logger;   
+            _logger = logger;
         }
 
         [HttpPost("")]
@@ -26,6 +26,15 @@ namespace Kod.WebAPI.Controllers
         {
             var list = await Mediator.Send(new GetAllProblemsQuery());
             var response = list.ConvertAll(x => new GetAllProblemsQueryResponse(x.Id, x.CategoriId, x.Title, x.Description, x.IsPrivate, x.Point, x.CreatedAt));
+
+            return Ok(response, "listed");
+        }
+
+        [HttpGet("/{id}")]
+        public async Task<IActionResult> GetProblem(int id)
+        {
+            var list = await Mediator.Send(new GetProblemQuery(id));
+            var response = list.ConvertAll(x => new GetProblemQueryResponse(x.CategoriId, x.Title, x.Description, x.IsPrivate, x.Point, x.CreatedAt));
 
             return Ok(response, "listed");
         }

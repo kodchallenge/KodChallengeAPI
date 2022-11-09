@@ -39,14 +39,29 @@ namespace Kod.Application.Managers
         {
             // TODO:: Searching without Id
             _logger.LogInformation($"DeleteProblemsAsync method started with @problem={problem}");
-            var isExistName = await _problemRepository.GetAsync(x => x.Id == problem.Id);
-            if (isExistName == null)
+            var isExist = await _problemRepository.GetAsync(x => x.Id.Equals(problem.Id));
+            if (isExist == null)
             {
                 throw new InternalException(Messages.NotExist);
             }
             await _problemRepository.DeleteAsync(problem);
             _logger.LogInformation($"DeleteProblemsAsync method finished with @deletedProblem={problem}");
             return problem;
+        }
+
+        public async Task<Problems> GetByIdAsync(int id)
+        {
+            _logger.LogInformation($"GetProblemByIdAsync method started with @id={id}");
+
+            var isExist = await _problemRepository.GetAsync(x=>x.Id.Equals(id));
+            if (isExist == null)
+            {
+                throw new InternalException(Messages.NotExist);
+            }
+
+            _logger.LogInformation($"GetProblemByIdAsync method finished with @problem={isExist}");
+
+            return isExist;
         }
 
         public async Task<List<Problems>> GetListAsync(Expression<Func<Problems, bool>>? predicate)

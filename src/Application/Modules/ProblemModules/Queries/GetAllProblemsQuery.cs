@@ -23,8 +23,8 @@ namespace Kod.Application.Modules.ProblemModules.Queries
 
         public async Task<List<GetAllProblemsQueryResponse>> Handle(GetAllProblemsQuery request, CancellationToken cancellationToken)
         {
-            var problmes = await _problemsService.GetListAsync(null);
-            return problmes.ConvertAll(x => _mapper.Map<GetAllProblemsQueryResponse>(x));
+            var problems = await _problemsService.GetListAsync(null);
+            return problems.ConvertAll(x => _mapper.Map<GetAllProblemsQueryResponse>(x));
         }
     }
 }
