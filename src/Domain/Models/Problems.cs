@@ -40,9 +40,5 @@ namespace Kod.Domain.Models
             Id = id;
         }
 
-        public Problems(int id)
-        {
-            Id = id;
-        }
     }
 }
