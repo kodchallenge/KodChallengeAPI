@@ -8,7 +8,7 @@ namespace Application.Modules.UserSolutionModules.Profiles
     {
         public UserSolutionProfiles()
         {
-            CreateMap<UserSolutions, GetAllUserSolutionsQuery>().ReverseMap();
+            CreateMap<UserSolutions, GetAllUserSolutionsQueryResponse>().ReverseMap();
         }
     }
 }

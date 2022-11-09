@@ -8,7 +8,7 @@ namespace Kod.Application.Modules.ProblemModules.Profiles
     {
         public ProblemProfiles()
         {
-            CreateMap<Problems, GetAllProblemsQuery>().ReverseMap();
+            CreateMap<Problems, GetAllProblemsQueryResponse>().ReverseMap();
         }
     }
 }
