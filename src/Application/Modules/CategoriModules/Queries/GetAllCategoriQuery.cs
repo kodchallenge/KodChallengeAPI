@@ -6,11 +6,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Kod.Application.Modules.CategoriesModules.Queries
 {
-    public record GetAllCategoriQuery() : IRequest<List<GetAllCategoriesQueryResponse>>;
+    public record GetAllCategoriesQuery() : IRequest<List<GetAllCategoriesQueryResponse>>;
 
-    public record GetAllCategoriesQueryResponse(int Id, string Name, string Slug);
+    public record GetAllCategoriesQueryResponse(DateTime CreatedAt, int Id, string Name, string Slug);
 
-    public record GetAllCategoriesQueryHandler : IRequestHandler<GetAllCategoriQuery, List<GetAllCategoriesQueryResponse>>
+    public record GetAllCategoriesQueryHandler : IRequestHandler<GetAllCategoriesQuery, List<GetAllCategoriesQueryResponse>>
     {
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ namespace Kod.Application.Modules.CategoriesModules.Queries
             _categoriService = categoriService;
         }
 
-        public async Task<List<GetAllCategoriesQueryResponse>> Handle(GetAllCategoriQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetAllCategoriesQueryResponse>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
         {
             var categories = await _categoriService.GetListAsync(null);
 

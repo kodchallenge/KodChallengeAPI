@@ -1,6 +1,7 @@
 ﻿
 
 using Kod.Core.Domain.Models;
+using System.Text.Json.Serialization;
 
 namespace Kod.Domain.Models
 {
@@ -13,6 +14,8 @@ namespace Kod.Domain.Models
         public int Score { get; set; }
 
         public DateTime CreatedAt { get; set; }
+
+        [JsonConstructor]
         public UserSolutions( int userId, string solutionPath, int score, DateTime createdAt)
         {
             UserId = userId;

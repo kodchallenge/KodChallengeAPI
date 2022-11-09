@@ -1,5 +1,6 @@
 ﻿using Kod.Application.Modules.CategoriesModules.Queries;
 using Kod.Application.Modules.CategoriModules.Commands;
+using Kod.WebAPI.Responses.CategoriResponses;
 using Kod.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,8 +18,8 @@ namespace Kod.WebAPI.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetAllCategories()
         {
-            var list = await Mediator.Send(new GetAllCategoriQuery());
-            var response = list.ConvertAll(x => new GetAllCategoriesQueryResponse(x.Id, x.Name, x.Slug));
+            var list = await Mediator.Send(new GetAllCategoriesQuery());
+            var response = list.ConvertAll(x => new GetAllCategoriesResponse(x.Id, x.Name, x.Slug, x.CreatedAt));
 
             return Ok(response, "listed");
         }
@@ -30,11 +31,12 @@ namespace Kod.WebAPI.Controllers
             return Ok(addedCategories, "added");
         }
 
-        [HttpPut("")]
-        public async Task<IActionResult> UpdateCategories(Categories categories)
-        {
-            var updatedCategories = await Mediator.Send(new UpdateCategoriesCommand(categories.Name, categories.Slug, categories.CreatedAt));
-            return Ok(updatedCategories, "updated");
-        }
+        //[HttpPut("")]
+        //public async Task<IActionResult> UpdateCategories(Categories categories)
+        //{
+        //    var updatedCategories = await Mediator.Send(new UpdateCategoriesCommand(categories.Name, categories.Slug, categories.CreatedAt));
+        //    return Ok(updatedCategories, "updated");
+        //}
+
     }
 }
