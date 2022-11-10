@@ -38,5 +38,14 @@ namespace Kod.WebAPI.Controllers
         //    return Ok(updatedCategories, "updated");
         //}
 
+        [HttpDelete("/{Id}")]
+
+        public async Task<IActionResult> DeleteCategoriById(int Id)
+        {
+            var deleteCategori = await Mediator.Send(new DeleteCategoriCommand(Id));
+
+            return Ok(deleteCategori, "deleted");
+        }
+
     }
 }
