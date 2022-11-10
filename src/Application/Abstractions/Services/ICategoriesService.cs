@@ -11,5 +11,6 @@ namespace Kod.Application.Abstractions.Services
         Task<Categories> UpdateAsync(Categories categori);
 
         Task<Categories> DeleteAsync(Categories categori);
+        Task<Categories> DeleteByIdAsync(int Id);
     }
 }

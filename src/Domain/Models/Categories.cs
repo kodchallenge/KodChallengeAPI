@@ -20,5 +20,10 @@ namespace Kod.Domain.Models
             CreatedAt = createdAt;
         }
 
+        public Categories(int id)
+        {
+            Id = id;
+        }
+
     }
 }

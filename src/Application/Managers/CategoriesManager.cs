@@ -47,6 +47,20 @@ namespace Kod.Application.Managers
             return categori;    
         }
 
+        public async Task<Categories> DeleteByIdAsync(int Id)
+        {
+            _logger.LogInformation($"DeleteCategoriesByIdAsync method started with @Id={Id}");
+            var isExistName = await _categoriesRepository.GetAsync(x => x.Id.Equals(Id));
+            if (isExistName == null)
+            {
+                throw new InternalException(Messages.NotExist);
+            }
+
+            await _categoriesRepository.DeleteAsync(isExistName);
+            _logger.LogInformation($"DeletedCategoriesByIdAsync method finished with @deletedCategoriId={Id}");
+            return isExistName;
+        }
+
         public async Task<List<Categories>> GetListAsync(Expression<Func<Categories, bool>>? predicate)
         {
             _logger.LogInformation($"GetCategoriesListAsync method started with @predicate={predicate}");
