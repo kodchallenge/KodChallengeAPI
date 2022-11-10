@@ -46,6 +46,21 @@ namespace Kod.Application.Managers
             return userSolution;
         }
 
+        public async Task<UserSolutions> GetByIdAsync(int id)
+        {
+            _logger.LogInformation($"GetUserSolutionByIdAsync method started with @id={id}");
+
+            var isExist = await _userSolutionsRepository.GetAsync(x => x.Id.Equals(id));
+            if (isExist == null)
+            {
+                throw new InternalException(Messages.NotExist);
+            }
+
+            _logger.LogInformation($"GetUserSolutionByIdAsync method finished with @solution={isExist}");
+
+            return isExist;
+        }
+
         public async Task<List<UserSolutions>> GetListAsync(Expression<Func<UserSolutions, bool>>? predicate)
         {
             _logger.LogInformation($"GetUserSolutionsListAsync method started with @predicate={predicate}");

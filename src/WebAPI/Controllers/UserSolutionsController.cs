@@ -29,5 +29,14 @@ namespace Kod.WebAPI.Controllers
 
             return Ok(response, "listed");
         }
+
+        [HttpGet("/{id}")]
+        public async Task<IActionResult> GetUserSolution(int id)
+        {
+            var list = await Mediator.Send(new GetUserSolutionQuery(id));
+            var response = list.ConvertAll(x => new GetUserSolutionQueryResponse(x.UserId, x.SolutionPath, x.Score, x.CreatedAt));
+
+            return Ok(response, "listed");
+        }
     }
 }

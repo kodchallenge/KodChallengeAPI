@@ -11,5 +11,7 @@ namespace Kod.Application.Abstractions.Services
         Task<UserSolutions> UpdateAsync(UserSolutions userSolution);
 
         Task<UserSolutions> DeleteAsync(UserSolutions userSolution);
+
+        Task<UserSolutions> GetByIdAsync(int id);   
     }
 }
